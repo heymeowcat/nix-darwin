@@ -182,6 +182,16 @@
         programs.zsh = {
           enable = true;
           initExtra = ''
+            source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+            source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+            chruby ruby-3.1.3
+            export PATH="/usr/local/opt/openjdk/bin:$PATH"
+            export ANDROID_HOME=$HOME/Library/Android/sdk
+            export PATH=$PATH:$ANDROID_HOME/emulator
+            export PATH=$PATH:$ANDROID_HOME/platform-tools
+            export PYENV_ROOT="$HOME/.pyenv"
+            [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+            eval "$(pyenv init -)"
             eval "$(oh-my-posh init zsh)"
           '';
         };
