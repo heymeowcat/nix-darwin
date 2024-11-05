@@ -117,7 +117,7 @@
         programs.oh-my-posh = {
           enable = true;
           enableZshIntegration = true;
-          useTheme = "agnoster";
+          useTheme = "1_shell";
         };
 
         # Neovim configuration
@@ -193,6 +193,7 @@
             [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
             eval "$(pyenv init -)"
             eval "$(oh-my-posh init zsh)"
+            export PATH="$HOME/.cargo/bin:$PATH"
           '';
         };
       };
