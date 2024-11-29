@@ -15,10 +15,8 @@
       
       # System packages
       environment.systemPackages = with pkgs; [
-        alacritty
         mkalias
         neovim
-        obsidian
         tmux
         oh-my-posh
         ripgrep
@@ -194,6 +192,9 @@
             eval "$(pyenv init -)"
             eval "$(oh-my-posh init zsh)"
             export PATH="$HOME/.cargo/bin:$PATH"
+            export PATH="$HOME/.deno/bin:$PATH"
+            export BUN_INSTALL="$HOME/.bun" 
+            export PATH="$BUN_INSTALL/bin:$PATH" 
           '';
         };
       };
